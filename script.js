@@ -1,30 +1,3 @@
-let currentItemData = {
-    item1: { 
-        name: 'Cape Bintang Malam', 
-        description: 'Cape eksklusif dengan pola bintang yang bersinar', 
-        price: 'Rp 75.000', 
-        image: 'https://placeholder-image-service.onrender.com/image/300x300?prompt=Beautiful%20winged%20cape%20from%20Sky%20Children%20of%20the%20Light%20with%20glowing%20edges%20and%20starry%20pattern&id=be61f308-5feb-4a25-8063-b23f1821c9c4' 
-    },
-    item2: { 
-        name: 'Rambut Cahaya', 
-        description: 'Gaya rambut eksklusif dengan aksen bercahaya', 
-        price: 'Rp 50.000', 
-        image: 'https://placeholder-image-service.onrender.com/image/300x300?prompt=Unique%20hairstyle%20with%20glowing%20accents%20from%20Sky%20Children%20of%20the%20Light%20game&id=be61f308-5feb-4a25-8063-b23f1821c9c4' 
-    },
-    item3: { 
-        name: 'Seruling Langit', 
-        description: 'Alat musik langka dengan suara yang menenangkan', 
-        price: 'Rp 100.000', 
-        image: 'https://placeholder-image-service.onrender.com/image/300x300?prompt=Musical%20instrument%20from%20Sky%20Children%20of%20the%20Light%20with%20ethereal%20glow&id=be61f308-5feb-4a25-8063-b23f1821c9c4' 
-    },
-    item4: { 
-        name: 'Pelampung Cahaya', 
-        description: 'Prop eksklusif untuk mempercantik foto Anda', 
-        price: 'Rp 65.000', 
-        image: 'https://placeholder-image-service.onrender.com/image/300x300?prompt=Prop%20item%20from%20Sky%20Children%20of%20the%20Light%20with%20magical%20glow&id=be61f308-5feb-4a25-8063-b23f1821c9c4' 
-    }
-};
-
 document.addEventListener('DOMContentLoaded', function() {
     const heroVideo = document.getElementById('heroVideo');
     if (!heroVideo) return; 
