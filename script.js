@@ -27,15 +27,13 @@ let currentItemData = {
 
 document.addEventListener('DOMContentLoaded', function() {
     const heroVideo = document.getElementById('heroVideo');
-    if (!heroVideo) return; // Pastikan ini halaman utama
+    if (!heroVideo) return; 
 
-    // Video event listeners
     heroVideo.addEventListener('loadedmetadata', () => {});
     heroVideo.addEventListener('error', () => {
         console.error('Error loading video. Please check the file path.');
     });
 
-    // Mobile nav toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     hamburger.addEventListener('click', () => {
@@ -49,14 +47,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Navbar scroll effect
     window.addEventListener('scroll', () => {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) navbar.classList.add('scrolled');
         else navbar.classList.remove('scrolled');
     });
 
-    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', e => {
             e.preventDefault();
@@ -72,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Scroll animation for sections
     function checkScroll() {
         document.querySelectorAll('section').forEach(section => {
             const top = section.getBoundingClientRect().top;
@@ -84,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
     checkScroll();
     window.addEventListener('scroll', checkScroll);
 
-    // Contact form submission
     const contactForm = document.querySelector('.contact-form form');
     if (contactForm) {
         contactForm.addEventListener('submit', e => {
@@ -94,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Load item data from localStorage and update page
     loadDynamicContent();
 });
 
