@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - SkyLuminary Emporium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Admin Panel Styles */
+        .admin-body {
+            background: linear-gradient(135deg, #0a0e17 0%, #131b29 100%);
+            min-height: 100vh;
+            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .admin-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .admin-title {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #ff9a3d, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .admin-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .admin-section h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4ecdc4;
+            padding-bottom: 10px;
+        }
+
+        .item-editor {
+            display: grid;
+            gap: 20px;
+        }
+
+        .item-selector {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .admin-input, .admin-textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .admin-input:focus, .admin-textarea:focus {
+            outline: none;
+            border-color: #4ecdc4;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .file-input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .image-preview {
+            margin-top: 10px;
+            width: 100%;
+            height: 200px;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .image-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .admin-btn {
+            padding: 12px 25px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .admin-btn.btn-primary {
+            background: linear-gradient(45deg, #ff9a3d, #ff6b6b);
+            color: #fff;
+        }
+
+        .admin-btn.btn-primary:hover {
+            background: linear-gradient(45deg, #ff8a2d, #ff5b5b);
+            transform: translateY(-2px);
+        }
+
+        .admin-btn.btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .admin-btn.btn-secondary:hover {
+            background: #fff;
+            color: #0a0e17;
+        }
+
+        .preview-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .preview-item .item-image {
+            margin-bottom: 15px;
+        }
+
+        .preview-item .item-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .preview-item .item-info h3 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .preview-item .item-info p {
+            color: #a0aec0;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .preview-item .item-price {
+            color: #ff9a3d;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .admin-container {
+                padding: 20px;
+            }
+            
+            .admin-title {
+                font-size: 2rem;
+            }
+            
+            .admin-section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body class="admin-body">
+    <div class="admin-container">
+        <h1 class="admin-title">Panel Admin SkyLuminary</h1>
+        
+        <div class="admin-section">
+            <h2>Edit Item Toko</h2>
+            
+            <div class="item-editor">
+                <div class="form-group">
+                    <label style="color: #fff; display: block; margin-bottom: 8px;">Pilih Item untuk Diedit:</label>
+                    <select id="itemSelector" class="item-selector">
+                        <option value="item1">item1</option>
+                        <option value="item2">item2</option>
+                        <option value="item3">item3</option>
+                        <option value="item4">item4</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label style="color: #fff; display: block; margin-bottom: 8px;">Gambar Item:</label>
+                    <input type="file" id="itemImageUpload" accept="image/*" class="file-input">
+                    <div class="image-preview" id="imagePreview">
+                        <span style="color: rgba(255,255,255,0.5);">Pratinjau gambar akan muncul di sini</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label style="color: #fff; display: block; margin-bottom: 8px;">Nama Item:</label>
+                    <input type="text" id="itemName" class="admin-input" placeholder="Nama item">
+                </div>
+
+                <div class="form-group">
+                    <label style="color: #fff; display: block; margin-bottom: 8px;">Deskripsi:</label>
+                    <textarea id="itemDescription" class="admin-textarea" placeholder="Deskripsi item" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label style="color: #fff; display: block; margin-bottom: 8px;">Harga:</label>
+                    <input type="text" id="itemPrice" class="admin-input" placeholder="Contoh: Rp 75.000">
+                </div>
+
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn-primary admin-btn">Simpan Perubahan</button>
+                    <button class="btn-secondary admin-btn">Reset Form</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="admin-section">
+            <h2>Pratinjau Perubahan</h2>
+            <div class="preview-item" id="itemPreview">
+                <div class="item-image">
+                    <img id="previewImage" src="" alt="Preview image">
+                </div>
+                <div class="item-info">
+                    <h3 id="previewName">Nama Item</h3>
+                    <p id="previewDescription">Deskripsi item akan muncul di sini</p>
+                    <span id="previewPrice" class="item-price">Rp 0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script-admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyLuminary Emporium - Sky: Children of the Light Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Content (langsung terlihat) -->
+    <main class="main-content show"> <!-- Tambahkan class 'show' di sini -->
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>SkyLuminary</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#items" class="nav-link">Item</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">Jasa Joki</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Kontak</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section with Video Wallpaper -->
+        <section id="home" class="hero">
+            <div class="video-background">
+                <video autoplay muted loop playsinline id="heroVideo">
+                    <source src="VIDEO/LIVEWALPAPER1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title animate-text">Selamat Datang di SkyLuminary</h1>
+                <p class="hero-subtitle">Toko item dan jasa joki terpercaya untuk Sky: Children of the Light</p>
+                <div class="hero-buttons">
+                    <a href="#items" class="btn btn-primary">Lihat Item</a>
+                    <a href="#services" class="btn btn-secondary">Jasa Joki</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span></span>
+            </div>
+        </section>
+
+        <!-- Items Section -->
+        <section id="items" class="items-section">
+            <div class="container">
+                <h2 class="section-title">Item Sky: Children of the Light</h2>
+                <p class="section-subtitle">Koleksi item eksklusif untuk mempercantik karakter Anda</p>
+                
+                <div class="items-grid">
+                    <div class="item-card">
+                        <div class="item-image">
+                            <!-- Tambahkan id untuk gambar item 1 -->
+                            <img id="item1-img" src="https://placeholder-image-service.onrender.com/image/300x300?prompt=Beautiful%20winged%20cape%20from%20Sky%20Children%20of%20the%20Light%20with%20glowing%20edges%20and%20starry%20pattern&id=be61f308-5feb-4a25-8063-b23f1821c9c4" alt="Cape item with starry pattern and glowing edges from Sky: Children of the Light">
+                        </div>
+                        <div class="item-info">
+                            <!-- Tambahkan id untuk nama, deskripsi, dan harga item 1 -->
+                            <h3 id="item1-name">Cape Bintang Malam</h3>
+                            <p id="item1-desc">Cape eksklusif dengan pola bintang yang bersinar</p>
+                            <span class="item-price" id="item1-price">Rp 75.000</span>
+                             <a href="order.html" class="btn-buy" style="display:inline-block; text-align:center;">Beli Sekarang</a>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card">
+                        <div class="item-image">
+                            <!-- Tambahkan id untuk gambar item 2 -->
+                            <img id="item2-img" src="https://placeholder-image-service.onrender.com/image/300x300?prompt=Unique%20hairstyle%20with%20glowing%20accents%20from%20Sky%20Children%20of%20the%20Light%20game&id=be61f308-5feb-4a25-8063-b23f1821c9c4" alt="Hairstyle with glowing accents from Sky: Children of the Light">
+                        </div>
+                        <div class="item-info">
+                            <!-- Tambahkan id untuk nama, deskripsi, dan harga item 2 -->
+                            <h3 id="item2-name">Rambut Cahaya</h3>
+                            <p id="item2-desc">Gaya rambut eksklusif dengan aksen bercahaya</p>
+                            <span class="item-price" id="item2-price">Rp 50.000</span>
+                             <a href="order.html" class="btn-buy" style="display:inline-block; text-align:center;">Beli Sekarang</a>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card">
+                        <div class="item-image">
+                            <!-- Tambahkan id untuk gambar item 3 -->
+                            <img id="item3-img" src="https://placeholder-image-service.onrender.com/image/300x300?prompt=Musical%20instrument%20from%20Sky%20Children%20of%20the%20Light%20with%20ethereal%20glow&id=be61f308-5feb-4a25-8063-b23f1821c9c4" alt="Musical instrument with ethereal glow from Sky: Children of the Light">
+                        </div>
+                        <div class="item-info">
+                            <!-- Tambahkan id untuk nama, deskripsi, dan harga item 3 -->
+                            <h3 id="item3-name">Seruling Langit</h3>
+                            <p id="item3-desc">Alat musik langka dengan suara yang menenangkan</p>
+                            <span class="item-price" id="item3-price">Rp 100.000</span>
+                             <a href="order.html" class="btn-buy" style="display:inline-block; text-align:center;">Beli Sekarang</a>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card">
+                        <div class="item-image">
+                            <!-- Tambahkan id untuk gambar item 4 -->
+                            <img id="item4-img" src="https://placeholder-image-service.onrender.com/image/300x300?prompt=Prop%20item%20from%20Sky%20Children%20of%20the%20Light%20with%20magical%20glow&id=be61f308-5feb-4a25-8063-b23f1821c9c4" alt="Prop item with magical glow from Sky: Children of the Light">
+                        </div>
+                        <div class="item-info">
+                            <!-- Tambahkan id untuk nama, deskripsi, dan harga item 4 -->
+                            <h3 id="item4-name">Pelampung Cahaya</h3>
+                            <p id="item4-desc">Prop eksklusif untuk mempercantik foto Anda</p>
+                            <span class="item-price" id="item4-price">Rp 65.000</span>
+                             <a href="order.html" class="btn-buy" style="display:inline-block; text-align:center;">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (Tidak perlu diubah jika tidak ada konten dinamis di sini) -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2 class="section-title">Jasa Joki</h2>
+                <p class="section-subtitle">Layanan profesional untuk kemajuan permainan Anda</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="IMG/candle.png" alt="Icon for candle running service">
+                        </div>
+                        <h3>Candle Running</h3>
+                        <p>Kami akan mengumpulkan lilin harian untuk Anda</p>
+                        <ul>
+                            <li>Semua realm harian</li>
+                            <li>Lilin musiman termasuk</li>
+                            <li>Laporan harian</li>
+                        </ul>
+                        <span class="service-price">Mulai Rp 25.000/hari</span>
+                        <a href="order.html" class="btn-service" style="text-align:center;">Pesan Sekarang</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="IMG/Heart.png" alt="Icon for heart farming service">
+                        </div>
+                        <div class="item-info">
+                            <h3>Heart Farming</h3>
+                            <p>Dapatkan hati dengan cepat dan aman</p>
+                            <ul>
+                                <li>Metode legal dan aman</li>
+                                <li>Hingga 10 hati/hari</li>
+                                <li>Proses transparan</li>
+                            </ul>
+                            <span class="service-price">Rp 5.000/hati</span>
+                            <a href="order.html" class="btn-service" style="text-align:center;">Pesan Sekarang</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="IMG/Season.png" alt="Icon for season pass completion service">
+                        </div>
+                        <div class="item-info">
+                            <h3>Season Completion</h3>
+                            <p>Dapatkan semua item musiman</p>
+                            <ul>
+                                <li>Semua item musiman</li>
+                                <li>Ultimate reward termasuk</li>
+                                <li>Progress harian</li>
+                            </ul>
+                            <span class="service-price">Mulai Rp 300.000/musim</span>
+                            <a href="order.html" class="btn-service" style="text-align:center;">Pesan Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">Tentang SkyLuminary</h2>
+                        <p>SkyLuminary adalah toko terpercaya yang menyediakan item dan jasa joki untuk game Sky: Children of the Light. Kami telah melayani ratusan pelanggan dengan reputasi yang terjaga.</p>
+                        <p>Dengan tim yang berpengalaman dan profesional, kami menjamin keamanan akun dan kepuasan pelanggan sebagai prioritas utama.</p>
+                        <div class="stats">
+                            <div class="stat">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Pelanggan</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">98%</span>
+                                <span class="stat-label">Kepuasan</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">2+</span>
+                                <span class="stat-label">Tahun</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="IMG/Info.png" alt="Team of Sky: Children of the Light players working together">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Hubungi Kami</h2>
+                <p class="section-subtitle">Silakan hubungi kami untuk pertanyaan atau pemesanan</p>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <img src="IMG/WhatsApp.png" alt="WhatsApp icon">
+                            </div>
+                            <div class="contact-details">
+                                <h3>WhatsApp</h3>
+                                <p>+62 857-6087-4161</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <img src="IMG/Instagram.png" alt="Instagram icon">
+                            </div>
+                            <div class="contact-details">
+                                <h3>Instagram</h3>
+                                <p>@skyluminary.emporium</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <img src="IMG/discord.png" alt="Email icon">
+                            </div>
+                            <div class="contact-details">
+                                <h3>Discord</h3>
+                                <p>skyluminary</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" placeholder="Nama Lengkap" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Pesan" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <h3>SkyLuminary Emporium</h3>
+                        <p>Toko item dan jasa joki terpercaya untuk Sky: Children of the Light</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Tautan Cepat</h4>
+                        <ul>
+                            <li><a href="#home">Beranda</a></li>
+                            <li><a href="#items">Item</a></li>
+                            <li><a href="#services">Jasa Joki</a></li>
+                            <li><a href="#about">Tentang</a></li>
+                            <li><a href="#contact">Kontak</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-social">
+                        <h4>Ikuti Kami</h4>
+                        <div class="social-icons">
+                            <a href="#"><img src="IMG/discord.png" alt="Instagram"></a>
+                            <a href="#"><img src="IMG/Instagram.png" alt="Facebook"></a>
+                            <a href="#"><img src="IMG/WhatsApp.png" alt="YouTube"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 SkyLuminary Emporium. All rights reserved. ERFINRYU COPYRIGHT</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Panggil script-main.js untuk halaman utama -->
+    <script src="script.js"></script>
+</body>
+</html>

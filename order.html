@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pesan Item - SkyLuminary Emporium</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html" style="color:inherit; text-decoration:none;">SkyLuminary</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html#home" class="nav-link">Beranda</a></li>
+                <li class="nav-item"><a href="index.html#items" class="nav-link">Item</a></li>
+                <li class="nav-item"><a href="index.html#services" class="nav-link">Jasa Joki</a></li>
+                <li class="nav-item"><a href="index.html#about" class="nav-link">Tentang</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">Kontak</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content show" style="padding: 100px 20px 60px; max-width: 600px; margin: 0 auto;">
+        <h1 class="section-title" style="text-align:center; margin-bottom: 1rem;">Formulir Pemesanan Item</h1>
+        <p style="text-align:center; color:#a0aec0; margin-bottom: 2rem;">Silakan isi formulir berikut untuk memesan item yang Anda inginkan.</p>
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="name" style="color:#fff;">Nama Lengkap</label>
+                <input type="text" id="name" name="name" placeholder="Nama Lengkap" required />
+            </div>
+            <div class="form-group">
+                <label for="email" style="color:#fff;">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" required />
+            </div>
+            <div class="form-group">
+                <label for="item" style="color:#fff;">Pilih Item</label>
+                <select id="item" name="item" required>
+                    <option value="" disabled selected>Pilih item</option>
+                    <option value="Cape Bintang Malam">Cape Bintang Malam</option>
+                    <option value="Rambut Cahaya">Rambut Cahaya</option>
+                    <option value="Seruling Langit">Seruling Langit</option>
+                    <option value="Pelampung Cahaya">Pelampung Cahaya</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantity" style="color:#fff;">Jumlah</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" required />
+            </div>
+            <div class="form-group">
+                <label for="notes" style="color:#fff;">Catatan (opsional)</label>
+                <textarea id="notes" name="notes" rows="4" placeholder="Masukkan catatan tambahan jika ada..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%;">Pesan Sekarang</button>
+        </form>
+    </main>
+
+    <footer class="footer" style="margin-top: 60px;">
+        <div class="container">
+            <div class="footer-bottom" style="text-align:center; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); color:#a0aec0;">
+                &copy; 2023 SkyLuminary Emporium. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Form submission handler
+        const orderForm = document.getElementById('orderForm');
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Ambil data form
+            const name = this.name.value.trim();
+            const email = this.email.value.trim();
+            const item = this.item.value;
+            const quantity = this.quantity.value;
+            const notes = this.notes.value.trim();
+
+            // Validasi sederhana (sudah ada required di HTML)
+            if (!name || !email || !item || !quantity) {
+                alert('Mohon lengkapi semua data yang diperlukan.');
+                return;
+            }
+
+            // Contoh: Tampilkan ringkasan pemesanan
+            alert(
+                `Terima kasih, ${name}!\n\n` +
+                `Pesanan Anda:\n` +
+                `Item: ${item}\n` +
+                `Jumlah: ${quantity}\n` +
+                (notes ? `Catatan: ${notes}\n` : '') +
+                `\nKami akan menghubungi Anda melalui email: ${email}`
+            );
+
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
