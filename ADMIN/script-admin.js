@@ -2,12 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const itemSelector = document.getElementById('itemSelector');
     if (!itemSelector) return; // Pastikan ini halaman admin
 
-    // Load data dari localStorage jika ada
-    const savedData = localStorage.getItem('skyItems');
-    if (savedData) {
-        currentItemData = JSON.parse(savedData);
-    }
-
     loadSelectedItem('item1');
 
     // Event listeners
