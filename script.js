@@ -1,4 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const message = document.getElementById('contactMessage').value.trim();
+            
+            if (!name || !email || !message) {
+                alert('Mohon lengkapi semua field.');
+                return;
+            }
+            
+            // Save message
+            const contactMessage = {
+                id: Date.now(),
+                name: name,
+                email: email,
+                message: message,
+                date: new Date().toLocaleString('id-ID'),
+                read: false
+            };
+            
+            saveContactMessage(contactMessage);
+            alert('Terima kasih! Pesan Anda telah dikirim. Kami akan menghubungi Anda segera.');
+            contactForm.reset();
+        });
+    }
+});
+
+function saveContactMessage(message) {
+    let messages = JSON.parse(localStorage.getItem('skyContactMessages')) || [];
+    messages.push(message);
+    localStorage.setItem('skyContactMessages', JSON.stringify(messages));
+}
+
+document.addEventListener('DOMContentLoaded', function() {
     const heroVideo = document.getElementById('heroVideo');
     if (!heroVideo) return; 
 

@@ -96,9 +96,8 @@
             }
         }
 
-
         .navbar {
-            background: rgba(10, 17, 40, 0.8);
+            background: rgba(10, 17, 40, 0.9);
             backdrop-filter: blur(10px);
             padding: 1rem 2rem;
             position: fixed;
@@ -132,11 +131,6 @@
             color: transparent;
         }
 
-        @keyframes glow {
-            0% { text-shadow: 0 0 5px rgba(106, 177, 255, 0.5); }
-            100% { text-shadow: 0 0 20px rgba(167, 139, 250, 0.8); }
-        }
-
         .nav-menu {
             display: flex;
             list-style: none;
@@ -159,6 +153,7 @@
             left: -100%;
             width: 100%;
             height: 2px;
+            background: linear-gradient(90deg, transparent, #6ab1ff, transparent);
             transition: left 0.5s;
         }
 
@@ -186,7 +181,7 @@
 
         .main-content {
             padding: 120px 20px 60px;
-            max-width: 600px;
+            max-width: 1200px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -208,15 +203,10 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff, #ffffff);
+            background: linear-gradient(135deg, #6ab1ff, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 700;
-        }
-
-        @keyframes titlePulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
         }
 
         .section-subtitle {
@@ -230,6 +220,91 @@
         @keyframes fadeIn {
             0% { opacity: 0; }
             100% { opacity: 1; }
+        }
+
+        .order-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 968px) {
+            .order-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .order-summary {
+            background: rgba(15, 26, 46, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(106, 177, 255, 0.2);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .order-summary h3 {
+            margin-bottom: 1.5rem;
+            color: #6ab1ff;
+            font-size: 1.5rem;
+        }
+
+        .selected-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .item-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-right: 15px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .item-details h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .item-details p {
+            color: #a0aec0;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .price {
+            color: #ffcb6b;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .order-total {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .total-amount {
+            color: #6ab1ff;
         }
 
         .order-form {
@@ -315,6 +390,41 @@
             background-size: 16px;
         }
 
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            background: rgba(15, 26, 46, 0.5);
+            border: 2px solid rgba(106, 177, 255, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            width: fit-content;
+        }
+
+        .quantity-btn {
+            background: rgba(106, 177, 255, 0.2);
+            border: none;
+            color: #6ab1ff;
+            font-size: 1.2rem;
+            width: 40px;
+            height: 48px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background: rgba(106, 177, 255, 0.3);
+        }
+
+        .quantity-input {
+            width: 60px;
+            text-align: center;
+            border: none;
+            background: transparent;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 0;
+        }
+
         .btn-order {
             width: 100%;
             padding: 16px 24px;
@@ -333,28 +443,15 @@
             margin-top: 1rem;
             position: relative;
             overflow: hidden;
-            animation: buttonPulse 2s infinite;
-        }
-
-        @keyframes buttonPulse {
-            0%, 100% { 
-                box-shadow: 0 4px 15px rgba(106, 177, 255, 0.3);
-                transform: scale(1);
-            }
-            50% { 
-                box-shadow: 0 6px 20px rgba(106, 177, 255, 0.5);
-                transform: scale(1.02);
-            }
         }
 
         .btn-order:hover {
-            transform: translateY(-3px) scale(1.03);
+            transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(106, 177, 255, 0.5);
-            animation: none;
         }
 
         .btn-order:active {
-            transform: translateY(0) scale(1);
+            transform: translateY(0);
         }
 
         .btn-order::after {
@@ -381,7 +478,7 @@
             font-size: 0.9rem;
             animation: fadeIn 1.5s ease-out 1.5s both;
         }
- 
+
         .success-message {
             display: none;
             background: rgba(15, 26, 46, 0.95);
@@ -394,7 +491,7 @@
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(0.8);
+            transform: translate(-50%, -50%);
             z-index: 1000;
             width: 90%;
             max-width: 500px;
@@ -506,7 +603,7 @@
                 padding: 100px 15px 40px;
             }
 
-            .order-form {
+            .order-form, .order-summary {
                 padding: 1.5rem;
             }
 
@@ -520,6 +617,7 @@
     <div class="stars" id="stars"></div>
     <div class="nebula"></div>
     <div class="floating-particles" id="particles"></div>
+    
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -545,43 +643,84 @@
         <h1 class="section-title">Formulir Pemesanan Item</h1>
         <p class="section-subtitle">Silakan isi formulir berikut untuk memesan item Sky Children of Light yang Anda inginkan.</p>
         
-        <form id="orderForm" class="order-form">
-            <div class="form-group">
-                <label for="name">Masukkan ID</label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="Masukan ID" required>
+        <div class="order-container">
+            <div class="order-form">
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="name">Masukkan ID Sky</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Masukkan ID Sky Anda" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Email Anda" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="item">Pilih Item</label>
+                        <select id="item" name="item" class="form-control select-custom" required>
+                            <option value="" disabled selected>Pilih item Sky Children of Light</option>
+                            <option value="Journey Pack" data-price="320000" data-image="ADMIN/Jounypack.jpg">Journey Pack - Rp 320.000</option>
+                            <option value="Vestige of Dark Dragons" data-price="165000" data-image="ADMIN/Krill.jpg">Vestige of Dark Dragons - Rp 165.000</option>
+                            <option value="Aurora Shoes" data-price="100000" data-image="ADMIN/Shoes.jpg">Aurora Shoes - Rp 100.000</option>
+                            <option value="Violin" data-price="260846" data-image="ADMIN/violin.jpg">Violin - Rp 260.846</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity">Jumlah</label>
+                        <div class="quantity-control">
+                            <button type="button" class="quantity-btn" id="decrease">-</button>
+                            <input type="number" id="quantity" name="quantity" class="quantity-input" min="1" value="1" required>
+                            <button type="button" class="quantity-btn" id="increase">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Catatan (opsional)</label>
+                        <textarea id="notes" name="notes" class="form-control" rows="4" placeholder="Masukkan catatan tambahan jika ada..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-order">
+                        <i class="fas fa-paper-plane"></i> Pesan Sekarang
+                    </button>
+                </form>
             </div>
             
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+            <div class="order-summary">
+                <h3>Ringkasan Pesanan</h3>
+                <div class="selected-item">
+                    <div class="item-image">
+                        <img id="summary-image" src="ADMIN/Jounypack.jpg" alt="Selected Item">
+                    </div>
+                    <div class="item-details">
+                        <h4 id="summary-name">Journey Pack</h4>
+                        <p id="summary-desc">Jubah merah berornamen emas dengan hood penutup kepala</p>
+                        <div class="price">Rp <span id="summary-price">320.000</span></div>
+                    </div>
+                </div>
+                <div class="order-details">
+                    <div class="detail-row">
+                        <span>Jumlah:</span>
+                        <span id="summary-quantity">1</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Subtotal:</span>
+                        <span>Rp <span id="summary-subtotal">320.000</span></span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Biaya Layanan:</span>
+                        <span>Rp 5.000</span>
+                    </div>
+                </div>
+                <div class="order-total">
+                    <span>Total:</span>
+                    <span class="total-amount">Rp <span id="summary-total">325.000</span></span>
+                </div>
             </div>
-            
-            <div class="form-group">
-                <label for="item">Pilih Item</label>
-                <select id="item" name="item" class="form-control select-custom" required>
-                    <option value="" disabled selected>Pilih item Sky Children of Light</option>
-                    <option value="Cape Bintang Malam">Journey Pack</option>
-                    <option value="Rambut Cahaya">Vestige of Dark Dragons</option>
-                    <option value="Seruling Langit">Aurora Shoes</option>
-                    <option value="Pelampung Cahaya">Violin</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="quantity">Jumlah</label>
-                <input type="number" id="quantity" name="quantity" class="form-control" min="1" value="1" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="notes">Catatan (opsional)</label>
-                <textarea id="notes" name="notes" class="form-control" rows="4" placeholder="Masukkan catatan tambahan jika ada..."></textarea>
-            </div>
-            
-            <button type="submit" class="btn-order">
-                <i class="fas fa-paper-plane"></i> Pesan Sekarang
-            </button>
-        </form>
+        </div>
     </main>
+    
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
@@ -589,17 +728,20 @@
             </div>
         </div>
     </footer>
+    
     <div class="success-message" id="successMessage">
         <div class="success-icon">
             <i class="fas fa-check-circle"></i>
         </div>
         <h2 class="success-title">Pesanan Berhasil!</h2>
         <div class="success-details" id="orderDetails">
+            <!-- Order details will be inserted here -->
         </div>
         <button class="btn-close" id="closeSuccess">Tutup</button>
     </div>
 
     <script>
+        // Create stars background
         function createStars() {
             const starsContainer = document.getElementById('stars');
             const starCount = 200;
@@ -622,6 +764,7 @@
             }
         }
         
+        // Create floating particles
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const particleCount = 30;
@@ -652,6 +795,7 @@
             }
         }
         
+        // Mobile menu toggle
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
         
@@ -669,11 +813,69 @@
             });
         }
         
+        // Order form functionality
         const orderForm = document.getElementById('orderForm');
         const successMessage = document.getElementById('successMessage');
         const orderDetails = document.getElementById('orderDetails');
         const closeSuccess = document.getElementById('closeSuccess');
+        const itemSelect = document.getElementById('item');
+        const quantityInput = document.getElementById('quantity');
+        const decreaseBtn = document.getElementById('decrease');
+        const increaseBtn = document.getElementById('increase');
         
+        // Item descriptions for summary
+        const itemDescriptions = {
+            "Journey Pack": "Jubah merah berornamen emas dengan hood penutup kepala",
+            "Vestige of Dark Dragons": "Tanduk hitam melengkung dan ekor bersisik gelap",
+            "Aurora Shoes": "Sepatu bercahaya lembut dengan jejak berkilau",
+            "Violin": "Alat musik dawai empat senar dengan melodi lembut"
+        };
+        
+        // Update order summary when item changes
+        itemSelect.addEventListener('change', updateOrderSummary);
+        
+        // Quantity controls
+        decreaseBtn.addEventListener('click', () => {
+            if (quantityInput.value > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+                updateOrderSummary();
+            }
+        });
+        
+        increaseBtn.addEventListener('click', () => {
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+            updateOrderSummary();
+        });
+        
+        quantityInput.addEventListener('input', updateOrderSummary);
+        
+        // Update order summary function
+        function updateOrderSummary() {
+            const selectedOption = itemSelect.options[itemSelect.selectedIndex];
+            const itemName = selectedOption.value;
+            const itemPrice = parseInt(selectedOption.getAttribute('data-price'));
+            const itemImage = selectedOption.getAttribute('data-image');
+            const quantity = parseInt(quantityInput.value);
+            
+            if (itemName) {
+                document.getElementById('summary-name').textContent = itemName;
+                document.getElementById('summary-desc').textContent = itemDescriptions[itemName] || "Item Sky Children of Light";
+                document.getElementById('summary-price').textContent = itemPrice.toLocaleString('id-ID');
+                document.getElementById('summary-image').src = itemImage;
+                document.getElementById('summary-quantity').textContent = quantity;
+                
+                const subtotal = itemPrice * quantity;
+                document.getElementById('summary-subtotal').textContent = subtotal.toLocaleString('id-ID');
+                
+                const total = subtotal + 5000; // Service fee
+                document.getElementById('summary-total').textContent = total.toLocaleString('id-ID');
+            }
+        }
+        
+        // Initialize order summary
+        updateOrderSummary();
+        
+        // Form submission
         if (orderForm) {
             orderForm.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -683,25 +885,55 @@
                 const item = this.item.value;
                 const quantity = this.quantity.value;
                 const notes = this.notes.value.trim();
+                const selectedOption = itemSelect.options[itemSelect.selectedIndex];
+                const itemPrice = parseInt(selectedOption.getAttribute('data-price'));
+                const total = (itemPrice * parseInt(quantity)) + 5000;
                 
                 if (!name || !email || !item || !quantity) {
                     alert('Mohon lengkapi semua data yang diperlukan.');
                     return;
                 }
                 
+                // Create order object
+                const order = {
+                    id: Date.now(),
+                    name: name,
+                    email: email,
+                    item: item,
+                    quantity: quantity,
+                    notes: notes,
+                    price: itemPrice,
+                    total: total,
+                    date: new Date().toLocaleString('id-ID'),
+                    status: 'pending'
+                };
+                
+                // Save to localStorage
+                saveOrder(order);
+                
+                // Show success message
                 orderDetails.innerHTML = `
                     <p><strong>Terima kasih, ${name}!</strong></p>
                     <p>Pesanan Anda:</p>
-                    <p>Item: ${item}</p>
-                    <p>Jumlah: ${quantity}</p>
-                    ${notes ? `<p>Catatan: ${notes}</p>` : ''}
+                    <p><strong>Item:</strong> ${item}</p>
+                    <p><strong>Jumlah:</strong> ${quantity}</p>
+                    <p><strong>Total:</strong> Rp ${total.toLocaleString('id-ID')}</p>
+                    ${notes ? `<p><strong>Catatan:</strong> ${notes}</p>` : ''}
                     <p>Kami akan menghubungi Anda melalui email: ${email}</p>
+                    <p>ID Pesanan: <strong>#${order.id}</strong></p>
                 `;
                 
                 successMessage.style.display = 'block';
-                
                 this.reset();
+                updateOrderSummary(); // Reset summary to default
             });
+        }
+        
+        // Save order to localStorage
+        function saveOrder(order) {
+            let orders = JSON.parse(localStorage.getItem('skyOrders')) || [];
+            orders.push(order);
+            localStorage.setItem('skyOrders', JSON.stringify(orders));
         }
         
         // Close success message
@@ -723,10 +955,11 @@
             });
         });
         
-        // Initialize background elements
+        // Initialize background elements and order summary
         window.addEventListener('DOMContentLoaded', () => {
             createStars();
             createParticles();
+            updateOrderSummary();
         });
     </script>
 </body>

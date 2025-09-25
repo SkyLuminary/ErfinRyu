@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - SkyLuminary Emporium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0f1a2e;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .admin-header {
+            background: rgba(10, 17, 40, 0.95);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-header h1 {
+            background: linear-gradient(45deg, #ff9a3d, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 1.8rem;
+        }
+
+        .admin-nav a {
+            color: #cbd5e0;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .admin-nav a:hover {
+            color: #6ab1ff;
+        }
+
+        .dashboard {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(15, 26, 46, 0.7);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(106, 177, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #6ab1ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #a0aec0;
+            font-size: 1rem;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tab {
+            padding: 1rem 2rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            border-bottom: 3px solid #6ab1ff;
+            color: #6ab1ff;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .table-container {
+            background: rgba(15, 26, 46, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(106, 177, 255, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        th {
+            background: rgba(10, 17, 40, 0.8);
+            color: #6ab1ff;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: rgba(106, 177, 255, 0.05);
+        }
+
+        .status {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            background: rgba(255, 203, 107, 0.2);
+            color: #ffcb6b;
+        }
+
+        .status-completed {
+            background: rgba(106, 255, 135, 0.2);
+            color: #6aff87;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #6ab1ff;
+            color: #0f1a2e;
+        }
+
+        .btn-primary:hover {
+            background: #5aa1ef;
+        }
+
+        .btn-danger {
+            background: #ff6b6b;
+            color: #fff;
+        }
+
+        .btn-danger:hover {
+            background: #ff5b5b;
+        }
+
+        .message-content {
+            max-height: 100px;
+            overflow-y: auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin: 0.5rem 0;
+        }
+
+        .unread {
+            background: rgba(106, 177, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                padding: 1rem;
+            }
+            
+            th, td {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab {
+                padding: 0.8rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="admin-header">
+        <h1>SkyLuminary Dashboard</h1>
+        <nav class="admin-nav">
+            <a href="index.html">Kembali ke Website</a>
+            <a href="#" id="logout">Logout</a>
+        </nav>
+    </header>
+
+    <div class="dashboard">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="totalOrders">0</div>
+                <div class="stat-label">Total Pesanan</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="pendingOrders">0</div>
+                <div class="stat-label">Pesanan Pending</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalMessages">0</div>
+                <div class="stat-label">Pesan Masuk</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="unreadMessages">0</div>
+                <div class="stat-label">Pesan Belum Dibaca</div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" data-tab="orders">Pesanan</div>
+            <div class="tab" data-tab="messages">Pesan Kontak</div>
+        </div>
+
+        <div class="tab-content active" id="orders-tab">
+            <div class="table-container">
+                <table id="ordersTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Item</th>
+                            <th>Jumlah</th>
+                            <th>Tanggal</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersBody">
+                        <!-- Orders will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-content" id="messages-tab">
+            <div class="table-container">
+                <table id="messagesTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Pesan</th>
+                            <th>Tanggal</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="messagesBody">
+                        <!-- Messages will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple authentication (in a real app, use proper authentication)
+        const adminPassword = "skyluminary2025";
+        
+        function checkAuth() {
+            const isAuthenticated = sessionStorage.getItem('adminAuthenticated');
+            if (!isAuthenticated) {
+                const password = prompt("Masukkan password admin:");
+                if (password === adminPassword) {
+                    sessionStorage.setItem('adminAuthenticated', 'true');
+                } else {
+                    alert("Password salah!");
+                    window.location.href = "index.html";
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function loadDashboard() {
+            if (!checkAuth()) return;
+
+            // Load orders
+            const orders = JSON.parse(localStorage.getItem('skyOrders')) || [];
+            const ordersBody = document.getElementById('ordersBody');
+            ordersBody.innerHTML = '';
+            
+            orders.forEach(order => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${order.id}</td>
+                    <td>${order.name}</td>
+                    <td>${order.email}</td>
+                    <td>${order.item}</td>
+                    <td>${order.quantity}</td>
+                    <td>${order.date}</td>
+                    <td><span class="status status-${order.status}">${order.status}</span></td>
+                    <td>
+                        ${order.status === 'pending' ? 
+                            `<button class="btn btn-primary" onclick="completeOrder(${order.id})">Selesai</button>` : 
+                            '<span>Completed</span>'
+                        }
+                        <button class="btn btn-danger" onclick="deleteOrder(${order.id})">Hapus</button>
+                    </td>
+                `;
+                ordersBody.appendChild(row);
+            });
+
+            // Load messages
+            const messages = JSON.parse(localStorage.getItem('skyContactMessages')) || [];
+            const messagesBody = document.getElementById('messagesBody');
+            messagesBody.innerHTML = '';
+            
+            messages.forEach(message => {
+                const row = document.createElement('tr');
+                row.className = message.read ? '' : 'unread';
+                row.innerHTML = `
+                    <td>${message.id}</td>
+                    <td>${message.name}</td>
+                    <td>${message.email}</td>
+                    <td>
+                        <div class="message-content">${message.message}</div>
+                    </td>
+                    <td>${message.date}</td>
+                    <td>${message.read ? 'Dibaca' : 'Belum dibaca'}</td>
+                    <td>
+                        ${!message.read ? 
+                            `<button class="btn btn-primary" onclick="markAsRead(${message.id})">Tandai Dibaca</button>` : 
+                            '<span>Sudah dibaca</span>'
+                        }
+                        <button class="btn btn-danger" onclick="deleteMessage(${message.id})">Hapus</button>
+                    </td>
+                `;
+                messagesBody.appendChild(row);
+            });
+
+            // Update stats
+            document.getElementById('totalOrders').textContent = orders.length;
+            document.getElementById('pendingOrders').textContent = orders.filter(o => o.status === 'pending').length;
+            document.getElementById('totalMessages').textContent = messages.length;
+            document.getElementById('unreadMessages').textContent = messages.filter(m => !m.read).length;
+        }
+
+        function completeOrder(orderId) {
+            let orders = JSON.parse(localStorage.getItem('skyOrders')) || [];
+            orders = orders.map(order => {
+                if (order.id === orderId) {
+                    return { ...order, status: 'completed' };
+                }
+                return order;
+            });
+            localStorage.setItem('skyOrders', JSON.stringify(orders));
+            loadDashboard();
+        }
+
+        function deleteOrder(orderId) {
+            if (confirm('Apakah Anda yakin ingin menghapus pesanan ini?')) {
+                let orders = JSON.parse(localStorage.getItem('skyOrders')) || [];
+                orders = orders.filter(order => order.id !== orderId);
+                localStorage.setItem('skyOrders', JSON.stringify(orders));
+                loadDashboard();
+            }
+        }
+
+        function markAsRead(messageId) {
+            let messages = JSON.parse(localStorage.getItem('skyContactMessages')) || [];
+            messages = messages.map(message => {
+                if (message.id === messageId) {
+                    return { ...message, read: true };
+                }
+                return message;
+            });
+            localStorage.setItem('skyContactMessages', JSON.stringify(messages));
+            loadDashboard();
+        }
+
+        function deleteMessage(messageId) {
+            if (confirm('Apakah Anda yakin ingin menghapus pesan ini?')) {
+                let messages = JSON.parse(localStorage.getItem('skyContactMessages')) || [];
+                messages = messages.filter(message => message.id !== messageId);
+                localStorage.setItem('skyContactMessages', JSON.stringify(messages));
+                loadDashboard();
+            }
+        }
+
+        // Tab functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.getElementById(`${tab.dataset.tab}-tab`).classList.add('active');
+            });
+        });
+
+        // Logout functionality
+        document.getElementById('logout').addEventListener('click', (e) => {
+            e.preventDefault();
+            sessionStorage.removeItem('adminAuthenticated');
+            window.location.href = 'index.html';
+        });
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', loadDashboard);
+    </script>
+</body>
+</html>
