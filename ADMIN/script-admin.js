@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const itemSelector = document.getElementById('itemSelector');
-    if (!itemSelector) return; // Pastikan ini halaman admin
+    if (!itemSelector) return; 
 
     loadSelectedItem('item1');
 
-    // Event listeners
     itemSelector.addEventListener('change', function() {
         loadSelectedItem(this.value);
         resetImagePreview();

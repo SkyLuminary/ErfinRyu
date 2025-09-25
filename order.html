@@ -638,7 +638,6 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main class="main-content">
         <h1 class="section-title">Formulir Pemesanan Item</h1>
         <p class="section-subtitle">Silakan isi formulir berikut untuk memesan item Sky Children of Light yang Anda inginkan.</p>
@@ -735,13 +734,11 @@
         </div>
         <h2 class="success-title">Pesanan Berhasil!</h2>
         <div class="success-details" id="orderDetails">
-            <!-- Order details will be inserted here -->
         </div>
         <button class="btn-close" id="closeSuccess">Tutup</button>
     </div>
 
     <script>
-        // Create stars background
         function createStars() {
             const starsContainer = document.getElementById('stars');
             const starCount = 200;
@@ -764,7 +761,6 @@
             }
         }
         
-        // Create floating particles
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const particleCount = 30;
@@ -795,7 +791,6 @@
             }
         }
         
-        // Mobile menu toggle
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
         
@@ -812,8 +807,7 @@
                 });
             });
         }
-        
-        // Order form functionality
+
         const orderForm = document.getElementById('orderForm');
         const successMessage = document.getElementById('successMessage');
         const orderDetails = document.getElementById('orderDetails');
@@ -823,7 +817,6 @@
         const decreaseBtn = document.getElementById('decrease');
         const increaseBtn = document.getElementById('increase');
         
-        // Item descriptions for summary
         const itemDescriptions = {
             "Journey Pack": "Jubah merah berornamen emas dengan hood penutup kepala",
             "Vestige of Dark Dragons": "Tanduk hitam melengkung dan ekor bersisik gelap",
@@ -831,10 +824,8 @@
             "Violin": "Alat musik dawai empat senar dengan melodi lembut"
         };
         
-        // Update order summary when item changes
         itemSelect.addEventListener('change', updateOrderSummary);
         
-        // Quantity controls
         decreaseBtn.addEventListener('click', () => {
             if (quantityInput.value > 1) {
                 quantityInput.value = parseInt(quantityInput.value) - 1;
@@ -848,8 +839,7 @@
         });
         
         quantityInput.addEventListener('input', updateOrderSummary);
-        
-        // Update order summary function
+
         function updateOrderSummary() {
             const selectedOption = itemSelect.options[itemSelect.selectedIndex];
             const itemName = selectedOption.value;
@@ -872,10 +862,8 @@
             }
         }
         
-        // Initialize order summary
         updateOrderSummary();
-        
-        // Form submission
+
         if (orderForm) {
             orderForm.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -894,7 +882,6 @@
                     return;
                 }
                 
-                // Create order object
                 const order = {
                     id: Date.now(),
                     name: name,
@@ -908,10 +895,8 @@
                     status: 'pending'
                 };
                 
-                // Save to localStorage
                 saveOrder(order);
                 
-                // Show success message
                 orderDetails.innerHTML = `
                     <p><strong>Terima kasih, ${name}!</strong></p>
                     <p>Pesanan Anda:</p>
@@ -925,25 +910,22 @@
                 
                 successMessage.style.display = 'block';
                 this.reset();
-                updateOrderSummary(); // Reset summary to default
+                updateOrderSummary(); 
             });
         }
         
-        // Save order to localStorage
         function saveOrder(order) {
             let orders = JSON.parse(localStorage.getItem('skyOrders')) || [];
             orders.push(order);
             localStorage.setItem('skyOrders', JSON.stringify(orders));
         }
         
-        // Close success message
         if (closeSuccess) {
             closeSuccess.addEventListener('click', () => {
                 successMessage.style.display = 'none';
             });
         }
         
-        // Add focus animation to form inputs
         const formInputs = document.querySelectorAll('.form-control');
         formInputs.forEach(input => {
             input.addEventListener('focus', function() {
@@ -955,7 +937,6 @@
             });
         });
         
-        // Initialize background elements and order summary
         window.addEventListener('DOMContentLoaded', () => {
             createStars();
             createParticles();
