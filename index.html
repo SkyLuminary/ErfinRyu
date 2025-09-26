@@ -4,289 +4,450 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkyLuminary Emporium - Sky: Children of the Light Store</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
 <body>
-    <main class="main-content show"> 
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <h2>SkyLuminary</h2>
-                </div>
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#items" class="nav-link">Item</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#services" class="nav-link">Jasa Joki</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">Tentang</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Kontak</a>
-                    </li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
+    <div class="stars" id="stars"></div>
+    <div class="nebula"></div>
+    <div class="floating-particles" id="particles"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>SkyLuminary</h2>
             </div>
-        </nav>
-        <section id="home" class="hero">
-            <div class="video-background">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#items" class="nav-link">Item</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Jasa Joki</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Tentang</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Kontak</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Selamat Datang di SkyLuminary</h1>
+            <p class="hero-subtitle">Toko item dan jasa joki terpercaya untuk Sky: Children of the Light. Dapatkan item eksklusif dan layanan profesional untuk pengalaman bermain yang lebih menyenangkan.</p>
+            <div class="hero-buttons">
+                <a href="#items" class="btn btn-primary">Jelajahi Item</a>
+                <a href="#services" class="btn btn-secondary">Lihat Layanan</a>
+            </div>    
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+        <div class="video-background">
                 <video autoplay muted loop playsinline id="heroVideo">
                     <source src="VIDEO/Wallpaper2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <div class="video-overlay"></div>
-            </div>
-            <div class="hero-content">
-                <h1 class="hero-title animate-text">Selamat Datang di SkyLuminary</h1>
-                <p class="hero-subtitle">Toko item dan jasa joki terpercaya untuk Sky: Children of the Light</p>
-                <div class="hero-buttons">
-                    <a href="#items" class="btn btn-primary">Lihat Item</a>
-                    <a href="#services" class="btn btn-secondary">Jasa Joki</a>
-                </div>
-            </div>
-            <div class="scroll-indicator">
-                <span></span>
-            </div>
-        </section>
+        <div class="video-overlay"></div>
+    </section>
 
-        <section id="items" class="items-section">
-            <div class="container">
-                <h2 class="section-title">Item Sky: Children of the Light</h2>
-                <p class="section-subtitle">Koleksi item eksklusif untuk mempercantik karakter Anda</p>
+    <section id="items" class="items-section">
+        <div class="container">
+            <h2 class="section-title">Item Sky: Children of the Light</h2>
+            <p class="section-subtitle">Koleksi item eksklusif untuk mempercantik karakter Anda dalam petualangan langit</p>
+            
+            <div class="items-grid">
+                <div class="item-card fade-in">
+                    <div class="item-image">
+                        <img src="ADMIN/Jounypack.jpg" alt="Journey Pack">
+                    </div>
+                    <div class="item-info">
+                        <h3>Journey Pack</h3>
+                        <p>Paket Journey menghadirkan jubah merah berornamen emas, hood penutup kepala, dan mask khas dengan panggilan unik dari Journey.</p>
+                        <span class="item-price">Rp 320.000</span>
+                        <a href="order.html" class="btn-buy">Beli Sekarang</a>
+                    </div>
+                </div>
                 
-                <div class="items-grid">
-                    <div class="item-card">
-                        <div class="item-image">
-                            <img id="item1-img" src="ADMIN/Jounypack.jpg" alt="Cape item with starry pattern and glowing edges from Sky: Children of the Light">
-                        </div>
-                        <div class="item-info">
-                            <h3 id="item1-name">Paket Journey</h3>
-                            <p id="item1-desc">Journey Pack menghadirkan jubah merah berornamen emas, hood penutup kepala, dan mask khas dengan panggilan unik dari Journey.</p>
-                            <span class="item-price" id="item1-price">Rp 320.000</span>
-                             <a href="order.html" class="btn-buy" style="display:inline-block; text-align:center;">Beli Sekarang</a>
-                        </div>
+                <div class="item-card fade-in">
+                    <div class="item-image">
+                        <img src="ADMIN/Krill.jpg" alt="Vestige of Dark Dragons">
                     </div>
-                    
-                    <div class="item-card">
-                        <div class="item-image">
-                            <img id="item2-img" src="ADMIN/Krill.jpg" alt="Hairstyle with glowing accents from Sky: Children of the Light">
-                        </div>
-                        <div class="item-info">
-                            <h3 id="item2-name">Vestige of Dark Dragons</h3>
-                            <p id="item2-desc">Vestige of Dark Dragons menghadirkan tanduk hitam melengkung dan ekor bersisik gelap yang memberi tampilan naga menakutkan.</p>
-                            <span class="item-price" id="item2-price">Rp 165.000</span>
-                             <a href="order.html" class="btn-buy" style="display:inline-block; text-align:center;">Beli Sekarang</a>
-                        </div>
+                    <div class="item-info">
+                        <h3>Vestige of Dark Dragons</h3>
+                        <p>Vestige of Dark Dragons menghadirkan tanduk hitam melengkung dan ekor bersisik gelap yang memberi tampilan naga menakutkan.</p>
+                        <span class="item-price">Rp 165.000</span>
+                        <a href="order.html" class="btn-buy">Beli Sekarang</a>
                     </div>
-                    
-                    <div class="item-card">
-                        <div class="item-image">
-                            <img id="item3-img" src="ADMIN/Shoes.jpg" alt="Musical instrument with ethereal glow from Sky: Children of the Light">
-                        </div>
-                        <div class="item-info">
-                            <h3 id="item3-name">Aurora Shoes</h3>
-                            <p id="item3-desc">Aurora Shoes berupa sepasang sepatu bercahaya lembut yang meninggalkan jejak berkilau saat melangkah, menambah kesan anggun.</p>
-                            <span class="item-price" id="item3-price">Rp 100.000</span>
-                             <a href="order.html" class="btn-buy" style="display:inline-block; text-align:center;">Beli Sekarang</a>
-                        </div>
+                </div>
+                
+                <div class="item-card fade-in">
+                    <div class="item-image">
+                        <img src="ADMIN/Shoes.jpg" alt="Aurora Shoes">
                     </div>
-                    
-                    <div class="item-card">
-                        <div class="item-image">
-                            <img id="item4-img" src="ADMIN/violin.jpg" alt="Prop item with magical glow from Sky: Children of the Light">
-                        </div>
-                        <div class="item-info">
-                            <h3 id="item4-name">Violin</h3>
-                            <p id="item4-desc">Violin adalah alat musik dawai empat senar yang dimainkan dengan bow, menghasilkan melodi lembut dan indah.</p>
-                            <span class="item-price" id="item4-price">Rp 260.846</span>
-                             <a href="order.html" class="btn-buy" style="display:inline-block; text-align:center;">Beli Sekarang</a>
-                        </div>
+                    <div class="item-info">
+                        <h3>Aurora Shoes</h3>
+                        <p>Aurora Shoes berupa sepasang sepatu bercahaya lembut yang meninggalkan jejak berkilau saat melangkah, menambah kesan anggun.</p>
+                        <span class="item-price">Rp 100.000</span>
+                        <a href="order.html" class="btn-buy">Beli Sekarang</a>
+                    </div>
+                </div>
+                
+                <div class="item-card fade-in">
+                    <div class="item-image">
+                        <img src="ADMIN/violin.jpg" alt="Violin">
+                    </div>
+                    <div class="item-info">
+                        <h3>Violin</h3>
+                        <p>Violin adalah alat musik dawai empat senar yang dimainkan dengan bow, menghasilkan melodi lembut dan indah.</p>
+                        <span class="item-price">Rp 260.846</span>
+                        <a href="order.html" class="btn-buy">Beli Sekarang</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="services" class="services-section">
-            <div class="container">
-                <h2 class="section-title">Jasa Joki</h2>
-                <p class="section-subtitle">Layanan profesional untuk kemajuan permainan Anda</p>
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Layanan Jasa Joki</h2>
+            <p class="section-subtitle">Tim profesional kami siap membantu kemajuan permainan Anda dengan layanan terpercaya</p>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <img src="IMG/candle.png" alt="Candle Running">
+                    </div>
+                    <h3>Candle Running</h3>
+                    <p>Kami akan mengumpulkan lilin harian untuk Anda</p>
+                    <ul>
+                        <li>Semua realm harian</li>
+                        <li>Lilin musiman termasuk</li>
+                        <li>Laporan harian</li>
+                        <li>Metode aman dan terpercaya</li>
+                    </ul>
+                    <span class="service-price">Mulai Rp 25.000/hari</span>
+                    <a href="order.html" class="btn-service">Pesan Layanan</a>
+                </div>
                 
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <img src="IMG/candle.png" alt="Icon for candle running service">
-                        </div>
-                        <h3>Candle Running</h3>
-                        <p>Kami akan mengumpulkan lilin harian untuk Anda</p>
-                        <ul>
-                            <li>Semua realm harian</li>
-                            <li>Lilin musiman termasuk</li>
-                            <li>Laporan harian</li>
-                        </ul>
-                        <span class="service-price">Mulai Rp 25.000/hari</span>
-                        <a href="order.html" class="btn-service" style="text-align:center;">Pesan Sekarang</a>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <img src="IMG/Heart.png" alt="Heart Farming">
                     </div>
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <img src="IMG/Heart.png" alt="Icon for heart farming service">
-                        </div>
-                        <div class="item-info">
-                            <h3>Heart Farming</h3>
-                            <p>Dapatkan hati dengan cepat dan aman</p>
-                            <ul>
-                                <li>Metode legal dan aman</li>
-                                <li>Hingga 10 hati/hari</li>
-                                <li>Proses transparan</li>
-                            </ul>
-                            <span class="service-price">Rp 5.000/hati</span>
-                            <a href="order.html" class="btn-service" style="text-align:center;">Pesan Sekarang</a>
-                        </div>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <img src="IMG/Season.png" alt="Icon for season pass completion service">
-                        </div>
-                        <div class="item-info">
-                            <h3>Season Completion</h3>
-                            <p>Dapatkan semua item musiman</p>
-                            <ul>
-                                <li>Semua item musiman</li>
-                                <li>Ultimate reward termasuk</li>
-                                <li>Progress harian</li>
-                            </ul>
-                            <span class="service-price">Mulai Rp 300.000/musim</span>
-                            <a href="order.html" class="btn-service" style="text-align:center;">Pesan Sekarang</a>
-                        </div>
-                    </div>
+                    <h3>Heart Farming</h3>
+                    <p>Dapatkan hati dengan cepat dan aman</p>
+                    <ul>
+                        <li>Metode legal dan aman</li>
+                        <li>Hingga 10 hati/hari</li>
+                        <li>Proses transparan</li>
+                        <li>Garansi kepuasan</li>
+                    </ul>
+                    <span class="service-price">Rp 5.000/hati</span>
+                    <a href="order.html" class="btn-service">Pesan Layanan</a>
                 </div>
-            </div>
-        </section>
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <h2 class="section-title">Tentang SkyLuminary</h2>
-                        <p>SkyLuminary adalah toko terpercaya yang menyediakan item dan jasa joki untuk game Sky: Children of the Light. Kami telah melayani ratusan pelanggan dengan reputasi yang terjaga.</p>
-                        <p>Dengan tim yang berpengalaman dan profesional, kami menjamin keamanan akun dan kepuasan pelanggan sebagai prioritas utama.</p>
-                        <div class="stats">
-                            <div class="stat">
-                                <span class="stat-number">500+</span>
-                                <span class="stat-label">Pelanggan</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">98%</span>
-                                <span class="stat-label">Kepuasan</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">2+</span>
-                                <span class="stat-label">Tahun</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-image">
-                        <img src="IMG/Info.png" alt="Team of Sky: Children of the Light players working together">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2 class="section-title">Hubungi Kami</h2>
-                <p class="section-subtitle">Silakan hubungi kami untuk pertanyaan atau pemesanan</p>
                 
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <img src="IMG/WhatsApp.png" alt="WhatsApp icon">
-                            </div>
-                            <div class="contact-details">
-                                <h3>WhatsApp</h3>
-                                <p>+62 857-6087-4161</p>
-                            </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <img src="IMG/Season.png" alt="Season Completion">
+                    </div>
+                    <h3>Season Completion</h3>
+                    <p>Dapatkan semua item musiman</p>
+                    <ul>
+                        <li>Semua item musiman</li>
+                        <li>Ultimate reward termasuk</li>
+                        <li>Progress harian</li>
+                        <li>Penyelesaian tepat waktu</li>
+                    </ul>
+                    <span class="service-price">Mulai Rp 300.000/musim</span>
+                    <a href="order.html" class="btn-service">Pesan Layanan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Tentang SkyLuminary</h2>
+                    <p>SkyLuminary adalah toko terpercaya yang menyediakan item dan jasa joki untuk game Sky: Children of the Light. Dengan pengalaman lebih dari 2 tahun dalam industri ini, kami telah melayani ratusan pelanggan dengan reputasi yang terjaga.</p>
+                    <p>Tim kami terdiri dari pemain berpengalaman yang memahami seluk-beluk permainan Sky. Kami berkomitmen untuk memberikan layanan terbaik dengan keamanan akun sebagai prioritas utama.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Pelanggan</span>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <img src="IMG/Instagram.png" alt="Instagram icon">
-                            </div>
-                            <div class="contact-details">
-                                <h3>Instagram</h3>
-                                <p>@skyluminary.emporium</p>
-                            </div>
+                        <div class="stat">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Kepuasan</span>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <img src="IMG/discord.png" alt="Email icon">
-                            </div>
-                            <div class="contact-details">
-                                <h3>Discord</h3>
-                                <p>skyluminary</p>
-                            </div>
+                        <div class="stat">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Tahun</span>
                         </div>
                     </div>
-                    <div class="contact-form">
-                        <form>
-                            <div class="form-group">
-                                <input type="text" placeholder="Nama Lengkap" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" placeholder="Email" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea placeholder="Pesan" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn-primary">Kirim Pesan</button>
-                        </form>
+                </div>
+                <div class="about-image">
+                    <img src="IMG/Info.png" alt="SkyLuminary Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <p class="section-subtitle">Silakan hubungi kami untuk pertanyaan atau pemesanan. Tim support kami siap membantu 24/7.</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+                        </div>
+                        <div class="contact-details">
+                            <h3>WhatsApp</h3>
+                            <p>+62 857-6087-4161</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+                        </div>
+                        <div class="contact-details">
+                            <h3>Instagram</h3>
+                            <p>@skyluminary.emporium</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord">
+                        </div>
+                        <div class="contact-details">
+                            <h3>Discord</h3>
+                            <p>skyluminary</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>support@skyluminary.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nama Lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Pesan Anda" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>SkyLuminary Emporium</h3>
+                    <p>Toko item dan jasa joki terpercaya untuk Sky: Children of the Light. Kami berkomitmen memberikan pengalaman terbaik untuk para pemain Sky.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Tautan Cepat</h4>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#items">Item</a></li>
+                        <li><a href="#services">Jasa Joki</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                        <li><a href="order.html">Pesan Sekarang</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-icons">
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
                     </div>
                 </div>
             </div>
-        </section>
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>SkyLuminary Emporium</h3>
-                        <p>Toko item dan jasa joki terpercaya untuk Sky: Children of the Light</p>
-                    </div>
-                    <div class="footer-links">
-                        <h4>Tautan Cepat</h4>
-                        <ul>
-                            <li><a href="#home">Beranda</a></li>
-                            <li><a href="#items">Item</a></li>
-                            <li><a href="#services">Jasa Joki</a></li>
-                            <li><a href="#about">Tentang</a></li>
-                            <li><a href="#contact">Kontak</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-social">
-                        <h4>Ikuti Kami</h4>
-                        <div class="social-icons">
-                            <a href="#"><img src="IMG/discord.png" alt="Instagram"></a>
-                            <a href="#"><img src="IMG/Instagram.png" alt="Facebook"></a>
-                            <a href="#"><img src="IMG/WhatsApp.png" alt="YouTube"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2025 SkyLuminary Emporium. All rights reserved. ERFINRYU COPYRIGHT</p>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SkyLuminary Emporium. All rights reserved. ERFINRYU COPYRIGHT</p>
             </div>
-        </footer>
-    </main>
-    <script src="script.js"></script>
+        </div>
+    </footer>
+
+    <script>
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 200;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                const size = Math.random() * 3;
+                const delay = Math.random() * 5;
+                
+                star.style.left = `${x}%`;
+                star.style.top = `${y}%`;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.animationDelay = `${delay}s`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 6 + 2;
+                const x = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 10 + 10;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${x}%`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                const colors = [
+                    'rgba(106, 177, 255, 0.5)',
+                    'rgba(167, 139, 250, 0.5)',
+                    'rgba(255, 203, 107, 0.5)'
+                ];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+        
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        function checkScroll() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const name = this.querySelector('input[type="text"]').value;
+                
+                const message = {
+                    id: Date.now(),
+                    name: name,
+                    email: this.querySelector('input[type="email"]').value,
+                    message: this.querySelector('textarea').value,
+                    date: new Date().toLocaleString('id-ID'),
+                    read: false
+                };
+                
+                saveContactMessage(message);
+                
+                alert(`Terima kasih, ${name}! Pesan Anda telah dikirim. Kami akan menghubungi Anda segera.`);
+                this.reset();
+            });
+        }
+        
+        function saveContactMessage(message) {
+            let messages = JSON.parse(localStorage.getItem('skyContactMessages')) || [];
+            messages.push(message);
+            localStorage.setItem('skyContactMessages', JSON.stringify(messages));
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            createStars();
+            createParticles();
+            checkScroll();
+            window.addEventListener('scroll', checkScroll);
+        });
+    </script>
 </body>
 </html>
